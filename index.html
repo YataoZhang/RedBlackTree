@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="RBTree.js"></script>
+    <script src="linkedList.js"></script>
+    <script>
+        var rbTree = new RBTree();
+        console.time('RB_insert');
+        for (var i = 0; i < 10000; i++) {
+            rbTree.insertNode(i + '_test');
+        }
+        console.timeEnd('RB_insert');
+        var linkedList = new LinkedList();
+        console.time('linkedList_insert');
+        for (var i = 0; i < 10000; i++) {
+            linkedList.add(i + '_test');
+        }
+        console.timeEnd('linkedList_insert');
+        console.time('RB');
+        var node = rbTree.searchNode(9999);
+        console.timeEnd('RB');
+        console.log(node.getValue());
+        console.time('linkedList');
+        var _node = linkedList.searchNode(9999);
+        console.timeEnd('linkedList');
+        console.log(_node)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
